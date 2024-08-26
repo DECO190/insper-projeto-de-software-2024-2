@@ -14,7 +14,7 @@ public class ApostaController {
     private ApostaService apostaService;
 
     @GetMapping
-    public List<Aposta> listar(@RequestParam String resultado) {
+    public List<Aposta> listar(@RequestParam(required=false) String resultado) {
         return apostaService.listar(resultado);
     }
 
