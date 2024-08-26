@@ -32,7 +32,7 @@ public class ApostaService {
     }
 
     public List<Aposta> listar(String filtroStatus) {
-        if (!filtroStatus.isEmpty()) {
+        if (filtroStatus != null) {
             return apostaRepository.findByResultado(filtroStatus);
         }
 
