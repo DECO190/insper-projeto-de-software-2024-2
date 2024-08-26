@@ -27,8 +27,9 @@ public class ApostaService {
 
         if (partida.getStatusCode().is2xxSuccessful())  {
             apostaRepository.save(aposta);
+        } else if (partida.getStatusCode().is4xxClientError() || partida.getStatusCode().is5xxServerError()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Não foi possível achar a partida!");
         }
-
     }
 
     public List<Aposta> listar(String filtroStatus) {
