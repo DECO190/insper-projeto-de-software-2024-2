@@ -10,8 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Document
-@Getter
-@Setter
+
 public class Aposta {
 
     @Id
@@ -23,4 +22,51 @@ public class Aposta {
 
     private String status; // GANHOU, PERDEU, REALIZADA
 
+    public String getId() {
+        return id;
+    }
+
+    public Integer getIdPartida() {
+        return idPartida;
+    }
+
+    public LocalDateTime getDataAposta() {
+        return dataAposta;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setIdPartida(Integer idPartida) {
+        this.idPartida = idPartida;
+    }
+
+    public void setDataAposta(LocalDateTime dataAposta) {
+        this.dataAposta = dataAposta;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
